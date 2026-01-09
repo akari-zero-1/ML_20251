@@ -19,7 +19,11 @@ def crawl_lazada(keyword="shirts", start_page=1, end_page=10):
         page = context.new_page()
 
         # Hit homepage once to obtain baseline cookies before calling the JSON endpoint directly.
-        page.goto("https://www.lazada.vn/", wait_until="networkidle", timeout=60000)
+        try:
+            page.goto("https://www.lazada.vn/", wait_until="domcontentloaded", timeout=30000)
+            time.sleep(2)  # Wait for additional resources to load
+        except Exception as e:
+            print(f"⚠️ Warning: Failed to load homepage, continuing anyway: {e}")
 
         headers = {
             "accept": "application/json, text/plain, */*",
