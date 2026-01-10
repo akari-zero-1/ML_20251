@@ -1,0 +1,16 @@
+Tôi muốn xây dựng : Logic xử lý của bài toán trong báo cáo tập trung vào việc xác định tính nhất quán giữa nội dung văn bản (comment) và số sao (star) mà người dùng đánh giá trên các trang thương mại điện tử.
+Tiền xử lý: 
+Xử lý văn bản thô:
+– Loại bỏ stopwords:
+∗ Thư viện sử dụng: stopwords from scikit-learn
+- Tách từ (Tokenization):
+
+Biểu diễn dữ liệu văn bản bằng TF-IDF:
+– Thư viện sử dụng: TfidfVectorizer from scikit-learn
+Giảm chiều dữ liệu bằng PCA:
+
+4. Đánh giá và Kết luận logic
+
+Dự đoán: Mô hình sẽ sinh ra một "số sao dự đoán" dựa trên nội dung văn bản.
+
+Xác định tính chính xác: Nếu số sao dự đoán khớp với số sao thực tế, review đó được coi là nhất quán
